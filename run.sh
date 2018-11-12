@@ -72,14 +72,14 @@ fi
 
 check_pgbench_tables
 echo $psql_status
-if [[ $? -eq 3 ]]; then
+if [ "$psql_status" -eq 3 ]; then
   initialize_pgbench_tables
-elif [[ $? -eq 0 ]]; then
+elif [ "$psql_status" -eq 0 ]; then
 echo '***************   Running pgbench    ***************'
 for run in 1 2 3; do
   echo Starting run $run
 #  pgbench -c $(($(nproc) * 4)) -j $(nproc) -M prepared -s ${SCALE_FACTOR} -T 300
-  pgbench -c ${PGBENCH_CLIENT_COUNT} -T {PGBENCH_TIME}
+  pgbench -c ${PGBENCH_CLIENT_COUNT} -T ${PGBENCH_TIME}
   echo
   echo
 done
