@@ -74,11 +74,7 @@ check_pgbench_tables
 echo $?
 if [[ $? -eq 3 ]]; then
   initialize_pgbench_tables
-elif [[ $? -ne 0 ]]; then
-  echo "exiting..."
-  exit $?
-else
-echo '***************   Running pgbench    ***************'
+elif [[ $? -eq 0 ]]; then
 
 for run in 1 2 3; do
   echo Starting run $run
@@ -87,4 +83,10 @@ for run in 1 2 3; do
   echo
   echo
 done
+
+else
+  echo "exiting..."
+  exit $?
+echo '***************   Running pgbench    ***************'
+
 fi
