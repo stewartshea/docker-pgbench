@@ -71,9 +71,10 @@ if [[ $attempt -ge 100 ]]; then
 fi
 
 check_pgbench_tables
-if [ $? -eq 3 ]; then
+echo $psql_status
+if [[ $? -eq 3 ]]; then
   initialize_pgbench_tables
-elif [ $? -eq 0 ]; then
+elif [[ $? -eq 0 ]]; then
 echo '***************   Running pgbench    ***************'
 for run in 1 2 3; do
   echo Starting run $run
