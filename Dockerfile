@@ -1,5 +1,5 @@
 FROM postgres:10
 
-COPY run.sh run.sh
+COPY run.sh test.sh .
 
 ENTRYPOINT [ "/run.sh" ]
