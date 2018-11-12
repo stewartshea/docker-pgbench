@@ -39,11 +39,11 @@ function initialize_pgbench_tables() {
   pgbench -i -F ${FILL_FACTOR:=100} -s ${SCALE_FACTOR:=100} --foreign-keys
 }
 
-export PGDATABASE=pgbench
-export PGUSER=pgbench
-export PGPASSWORD=${PGBENCH_PASSWORD}
-export PGHOST=${DB_1_PORT_5432_TCP_ADDR}
-export PGPORT=${DB_1_PORT_5432_TCP_PORT}
+#export PGDATABASE=pgbench
+#export PGUSER=pgbench
+#export PGPASSWORD=${PGBENCH_PASSWORD}
+#export PGHOST=${DB_1_PORT_5432_TCP_ADDR}
+#export PGPORT=${DB_1_PORT_5432_TCP_PORT}
 
 echo '*************** Waiting for postgres ***************'
 echo '**                                                **'
