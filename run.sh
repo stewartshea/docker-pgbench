@@ -39,6 +39,9 @@ function initialize_pgbench_tables() {
   pgbench -i -F ${FILL_FACTOR:=100} -s ${SCALE_FACTOR:=100} --foreign-keys
 }
 
+export PGBENCH_CLIENT_COUNT=${TEST_CLIENT_COUNT:=10}
+export PGBENCH_TIME=${TEST_DURATION:=60}
+
 #export PGDATABASE=pgbench
 #export PGUSER=pgbench
 #export PGPASSWORD=${PGBENCH_PASSWORD}
@@ -80,7 +83,8 @@ echo '***************   Running pgbench    ***************'
 
 for run in 1 2 3; do
   echo Starting run $run
-  pgbench -c $(($(nproc) * 4)) -j $(nproc) -M prepared -s ${SCALE_FACTOR} -T 300
+#  pgbench -c $(($(nproc) * 4)) -j $(nproc) -M prepared -s ${SCALE_FACTOR} -T 300
+  pgbench -c ${PGBENCH_CLIENT_COUNT} -T {PGBENCH_TIME}
   echo
   echo
 done
