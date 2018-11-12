@@ -71,11 +71,10 @@ if [[ $attempt -ge 100 ]]; then
 fi
 
 check_pgbench_tables
-echo $?
-if [[ $? -eq 3 ]]; then
+if [ $? -eq 3 ]; then
   initialize_pgbench_tables
-elif [[ $? -eq 0 ]]; then
-
+elif [ $? -eq 0 ]; then
+echo '***************   Running pgbench    ***************'
 for run in 1 2 3; do
   echo Starting run $run
 #  pgbench -c $(($(nproc) * 4)) -j $(nproc) -M prepared -s ${SCALE_FACTOR} -T 300
@@ -87,6 +86,4 @@ done
 else
   echo "exiting..."
   exit $?
-echo '***************   Running pgbench    ***************'
-
 fi
