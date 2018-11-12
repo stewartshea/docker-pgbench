@@ -71,10 +71,11 @@ if [[ $attempt -ge 100 ]]; then
 fi
 
 check_pgbench_tables
-
+echo $?
 if [[ $? -eq 3 ]]; then
   initialize_pgbench_tables
 elif [[ $? -ne 0 ]]; then
+  echo "exiting..."
   exit $?
 else
 echo '***************   Running pgbench    ***************'
