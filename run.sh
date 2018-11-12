@@ -75,6 +75,10 @@ echo $psql_status
 if [ "$psql_status" -eq 3 ]; then
   initialize_pgbench_tables
 elif [ "$psql_status" -eq 0 ]; then
+  echo "error exiting..."
+  exit $?
+fi 
+
 echo '***************   Running pgbench    ***************'
 for run in 1 2 3; do
   echo Starting run $run
@@ -84,7 +88,3 @@ for run in 1 2 3; do
   echo
 done
 
-else
-  echo "exiting..."
-  exit $?
-fi
