@@ -30,7 +30,7 @@ EOSQL
     2) echo "psql encountered a connection error!" ;;
     3) echo "One or more tables was missing! Initializing the database.";;
   esac
-
+  echo $psql_status
   return $psql_status
 }
 
