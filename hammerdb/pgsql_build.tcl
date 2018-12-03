@@ -1,13 +1,6 @@
 #!/bin/tclsh
-proc rndname len {
- set s "abcdefghjkmnpqrstuvwxyz"
- for {set i 0} {$i <= $len} {incr i} {
-    append p [string index $s [expr {int([string length $s]*rand())}]]
- }
- return $p
-}
-set testname [rndname 4]
-puts "TEST DB is $testname "
+
+puts "TEST DB is $::env(TEST_NAME)"
 puts "SETTING CONFIGURATION"
 global complete
 proc wait_to_complete {} {
@@ -18,9 +11,9 @@ if {!$complete} {after 5000 wait_to_complete} else { exit }
 dbset db pg
 diset connection pg_host $::env(PGHOST)
 diset connection pg_port 5432
-diset tpcc pg_user $testname
-diset tpcc pg_pass $testname
-diset tpcc pg_dbase $testname
+diset tpcc pg_user $::env(TEST_NAME)
+diset tpcc pg_pass $::env(TEST_NAME)
+diset tpcc pg_dbase $::env(TEST_NAME)
 dbset bm TPC-C
 print dict
 buildschema
