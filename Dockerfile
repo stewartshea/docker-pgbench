@@ -1,4 +1,6 @@
 FROM postgres:10
+RUN yum install -y tcl
+
 
 ## pgbench scripts
 COPY run.sh test.sh /
