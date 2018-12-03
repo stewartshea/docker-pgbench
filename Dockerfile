@@ -1,5 +1,5 @@
 FROM postgres:10
-RUN yum install -y tcl
+RUN apt-get install tcl
 
 
 ## pgbench scripts
