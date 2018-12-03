@@ -6,8 +6,8 @@ proc rndname len {
  }
  return $p
 }
-set dbtest [rndname 8]
-puts "TEST DB is $dbtest "
+set testname [rndname 8]
+puts "TEST DB is $testname "
 puts "SETTING CONFIGURATION"
 global complete
 proc wait_to_complete {} {
@@ -18,7 +18,9 @@ if {!$complete} {after 5000 wait_to_complete} else { exit }
 dbset db pg
 diset connection pg_host $::env(PGHOST)
 diset connection pg_port 5432
-diset tpcc pg_dbase $dbtest
+diset tpcc pg_user $testname
+diset tpcc pg_pass $testname
+diset tpcc pg_dbase $testname
 dbset bm TPC-C
 print dict
 buildschema
