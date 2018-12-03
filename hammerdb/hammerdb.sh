@@ -5,7 +5,6 @@ export TEST_NAME=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 6 | head -n 1)
 echo 'STARTING SCHEMA BUILD'
 ./hammerdbcli <<!
 source pgsql_build.tcl
-source pgsql_driver_test.tcl
 !
 
 echo 'SCHEMA BUILD COMPLETE'
