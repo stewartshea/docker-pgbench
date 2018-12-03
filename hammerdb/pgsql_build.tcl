@@ -7,7 +7,7 @@ set complete [vucomplete]
 if {!$complete} {after 5000 wait_to_complete} else { exit }
 }
 dbset db pg
-diset connection pg_host $::env(PG_HOST)
+diset connection pg_host $env(PG_HOST)
 diset connection pg_port 5432
 dbset bm TPC-C
 print dict
