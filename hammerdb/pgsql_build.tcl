@@ -6,7 +6,7 @@ proc rndname len {
  }
  return $p
 }
-set testname [rndname 8]
+set testname [rndname 4]
 puts "TEST DB is $testname "
 puts "SETTING CONFIGURATION"
 global complete
