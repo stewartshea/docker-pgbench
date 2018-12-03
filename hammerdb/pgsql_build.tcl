@@ -18,7 +18,7 @@ if {!$complete} {after 5000 wait_to_complete} else { exit }
 dbset db pg
 diset connection pg_host $::env(PGHOST)
 diset connection pg_port 5432
-diset connection pg_dbase $dbtest
+diset tpcc pg_dbase $dbtest
 dbset bm TPC-C
 print dict
 buildschema
