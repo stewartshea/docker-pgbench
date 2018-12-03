@@ -1,6 +1,4 @@
 FROM postgres:10
-RUN apt-get install tcl
-
 
 ## pgbench scripts
 COPY run.sh test.sh /
