@@ -1,6 +1,6 @@
 #!/bin/tclsh
 proc rndname len {
- set s "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789"
+ set s "abcdefghjkmnpqrstuvwxyz"
  for {set i 0} {$i <= $len} {incr i} {
     append p [string index $s [expr {int([string length $s]*rand())}]]
  }
