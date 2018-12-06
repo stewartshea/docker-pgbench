@@ -5,11 +5,11 @@ set total_iterations 1000000 ;# Number of transactions before logging off
 set RAISEERROR "false" ;# Exit script on PostgreSQL (true or false)
 set KEYANDTHINK "false" ;# Time for user thinking and keying (true or false)
 set ora_compatible "false" ;#Postgres Plus Oracle Compatible Schema
-set host "patroni-persistent-master" ;# Address of the server hosting PostgreSQL
-set port "5432" ;# Port of the PostgreSQL Server
-set user "qhygyq" ;# PostgreSQL user
-set password "qhygyq" ;# Password for the PostgreSQL user
-set db "qhygyq" ;# Database containing the TPC Schema
+set host patroni-persistent-master ;# Address of the server hosting PostgreSQL
+set port 5432 ;# Port of the PostgreSQL Server
+set user qhygyq ;# PostgreSQL user
+set password qhygyq ;# Password for the PostgreSQL user
+set db qhygyq ;# Database containing the TPC Schema
 #EDITABLE OPTIONS##################################################
 #LOAD LIBRARIES AND MODULES
 if [catch {package require $library} message] { error "Failed to load $library - $message" }
