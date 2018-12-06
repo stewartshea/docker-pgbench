@@ -7,9 +7,9 @@ set KEYANDTHINK "false" ;# Time for user thinking and keying (true or false)
 set ora_compatible "false" ;#Postgres Plus Oracle Compatible Schema
 set host "$::env(PGHOST)" ;# Address of the server hosting PostgreSQL
 set port "5432" ;# Port of the PostgreSQL Server
-set user $::env(TEST_NAME) ;# PostgreSQL user
-set password $::env(TEST_NAME) ;# Password for the PostgreSQL user
-set db $::env(TEST_NAME) ;# Database containing the TPC Schema
+set user "qhygyq" ;# PostgreSQL user
+set password "qhygyq" ;# Password for the PostgreSQL user
+set db "qhygyq" ;# Database containing the TPC Schema
 #EDITABLE OPTIONS##################################################
 #LOAD LIBRARIES AND MODULES
 if [catch {package require $library} message] { error "Failed to load $library - $message" }

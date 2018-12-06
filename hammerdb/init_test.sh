@@ -6,12 +6,8 @@ echo 'STARTING SCHEMA BUILD'
 ./hammerdbcli <<!
 source pgsql_build.tcl
 !
-
 echo 'SCHEMA BUILD COMPLETE'
-echo 'STARTING TEST'
-./hammerdbcli <<!
-source pgsql_driver_test.tcl
-!
+
 
 echo 'TEST COMPLETE'
 
